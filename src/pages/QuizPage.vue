@@ -83,6 +83,8 @@ let currentAnswer = ref(null)
 
 function nextQ() {
 
+  quizStore.sounds.gameNext.play()
+
   if (currentAnswer.value == null) {
     return
   }

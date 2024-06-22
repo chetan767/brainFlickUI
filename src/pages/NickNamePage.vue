@@ -26,7 +26,7 @@
 
 <script setup>
 import { useQuasar } from 'quasar'
-import { setNickname } from 'src/services/authService';
+import { clearGuestInfo, setNickname } from 'src/services/authService';
 import { useNicknameStore } from 'src/stores/nicknameStore';
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router';
@@ -56,7 +56,8 @@ function generateRandom4Digit() {
 }
 
 async function startBrainFlick() {
-  // nicknameStore.sendNicknameToServer(nickname.value)
+  clearGuestInfo()
+  await nicknameStore.sendNicknameToServer(nickname.value)
   router.push('topics')
 }
 

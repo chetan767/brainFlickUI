@@ -1,5 +1,6 @@
 import axios from "axios";
 import { getApiBaseUrl } from "src/constants/flavour";
+import { getHeaders } from "./authService";
 
 export async function brainPostAPI(data, path) {
   return axios
@@ -7,7 +8,7 @@ export async function brainPostAPI(data, path) {
       getApiBaseUrl() + path,
       { ...data },
       {
-        headers: {},
+        headers: getHeaders(),
       }
     )
     .then((res) => {
@@ -25,7 +26,7 @@ export async function brainPostAPI(data, path) {
 export async function brainGetAPI(path) {
   return axios
     .get(getApiBaseUrl() + path, {
-      headers: {},
+      headers: getHeaders(),
     })
     .then((res) => {
       if (res.data.success == false) {

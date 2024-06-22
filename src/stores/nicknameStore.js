@@ -4,8 +4,7 @@ import {
   getGuestSession,
   getNickname,
   getUserId,
-  setUserId,
-  setNickname,
+  setGuestInfo,
 } from "src/services/authService";
 
 export const useNicknameStore = defineStore("nickname", {
@@ -22,20 +21,18 @@ export const useNicknameStore = defineStore("nickname", {
       this.guestSession = getGuestSession();
     },
     async sendNicknameToServer(name) {
-      this.guestSession = true;
       this.nickname = name;
       let res = await brainPostAPI(
         {
-          name: this.nickname,
+          nickname: this.nickname,
         },
-        "nickname"
+        "user/guestLogin"
       );
 
       if ("error" in res && res.error) {
         //
       } else {
-        setUserId(res.userId);
-        setNickname(this.nickname);
+        setGuestInfo(res);
       }
     },
   },

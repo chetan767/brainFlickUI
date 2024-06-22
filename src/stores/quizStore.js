@@ -4,6 +4,10 @@ import { brainGetAPI, brainPostAPI } from "src/services/apiService";
 export const useQuizStore = defineStore("quiz", {
   state: () => ({
     quiz: {},
+    sounds: {
+      gameStart: new Audio("src/assets/audios/game-start.mp3"),
+      gameNext: new Audio("src/assets/audios/game-next.mp3"),
+    },
   }),
   getters: {},
   actions: {
@@ -18,5 +22,8 @@ export const useQuizStore = defineStore("quiz", {
         this.quiz = res;
       }
     },
+    // setSounds(sounds) {
+    //   this.sounds = sounds;
+    // },
   },
 });

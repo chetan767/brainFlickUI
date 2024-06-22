@@ -99,6 +99,7 @@ topicsStore.getTopicsFromServer()
 async function startQuiz(category, topic) {
   console.log("start quiz called");
   console.log(category, topic);
+
   await quizStore.getQuizFromServer({
     "category_id": category.id,
     "topic_id": topic.topicId,
@@ -109,7 +110,8 @@ async function startQuiz(category, topic) {
   if ("error" in quizStore.quiz) {
     return
   }
-
+  console.log(quizStore.sounds);
+  quizStore.sounds.gameStart.play()
   router.push(router.currentRoute.value.fullPath + '/' + topic.topicId)
 }
 
