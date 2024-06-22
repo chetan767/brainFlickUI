@@ -28,7 +28,7 @@ module.exports = configure(function (/* ctx */) {
       "material-icons",
 
       // 'ionicons-v4',
-      // 'mdi-v7',
+      "mdi-v7",
       // 'fontawesome-v6',
       // 'eva-icons',
       // 'themify',

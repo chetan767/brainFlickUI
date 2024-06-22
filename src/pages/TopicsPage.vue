@@ -42,12 +42,12 @@
 
             <div class="row align-center">
               <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="topic, index in category.topics" :key="index"
-                @click="startQuiz(topic)">
+                @click="startQuiz(category, topic)">
                 <q-card class="my-card  q-ma-md  ">
                   <q-card-section>
                     <div class="row items-center">
                       <div class="col-auto q-mr-sm">
-                        <q-icon size="sm" name="quiz" />
+                        <q-icon size="sm" name="mdi-movie-check-outline" />
                       </div>
                       <div class="text-h6  text-capitalize col">{{ topic.name }}</div>
                       <div class="col-auto">
@@ -66,12 +66,11 @@
                     {{ topic.description }}
                   </q-card-section>
                   <q-card-actions>
-                    <q-chip color="info" text-color="white" icon="event">
-                      Popular
+                    <q-chip v-for="tag, index in topic.tags" color="info" text-color="white" :icon="tag.icon"
+                      :key="index">
+                      {{ tag.name }}
                     </q-chip>
-                    <q-chip color="info" text-color="white" icon="bookmark">
-                      Cool
-                    </q-chip>
+
                   </q-card-actions>
                 </q-card>
               </div>
@@ -86,24 +85,37 @@
 </template>
 
 <script setup>
+import { useQuizStore } from 'src/stores/quizStore';
 import { useTopicsStore } from 'src/stores/topicsStore';
 import { useRouter } from 'vue-router';
 const router = useRouter()
-
+const quizStore = useQuizStore()
 const topicsStore = useTopicsStore()
-// topicsStore.getTopicsFromServer()
+topicsStore.getTopicsFromServer()
 
 
 
 
-function startQuiz(topic) {
+async function startQuiz(category, topic) {
   console.log("start quiz called");
+  console.log(category, topic);
+  await quizStore.getQuizFromServer({
+    "category_id": category.id,
+    "topic_id": topic.topicId,
+  })
+
+  console.log(quizStore.quiz);
+
+  if ("error" in quizStore.quiz) {
+    return
+  }
+
   router.push(router.currentRoute.value.fullPath + '/' + topic.topicId)
 }
 
 
 defineOptions({
-  name: 'IndexPage'
+  name: 'TopicsPage'
 });
 
 </script>

@@ -20,16 +20,7 @@
             class="q-py-sm  q-px-lg btn-color" />
         </div>
       </div>
-
-
-
     </div>
-
-
-
-
-
-
   </q-page>
 </template>
 

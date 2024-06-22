@@ -6,6 +6,6 @@ const FlavorType = {
 
 const APP_VERSION = "1";
 const APP_BUILDNUMBER = "1";
-const APP_FLAVOR = FlavorType.DEV;
+const APP_FLAVOR = FlavorType.LOCAL;
 
 export default { FlavorType, APP_VERSION, APP_BUILDNUMBER, APP_FLAVOR };
