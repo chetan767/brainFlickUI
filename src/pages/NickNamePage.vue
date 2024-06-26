@@ -4,32 +4,33 @@
 
       <div class="row">
 
-          <div class="col-6 text-white">
-            <div class="row justify-center ">
-              CHOOSE A COOL NICKNAME
+        <div class="col-6 text-white column items-end">
+          <div class="row justify-center ">
+            CHOOSE A COOL NICKNAME
+          </div>
+          <div class="row justify-center ">
+            <div class="col-12 q-mt-md myinput">
+              <q-input :input-style="{ fontSize: '18px' }" input-class="input-class text-white" outlined
+                v-model="nickname" autogrow class="secondary-border">
+                <template v-slot:append>
+                </template>
+              </q-input>
             </div>
-            <div class="row justify-center ">
-              <div class="col-4 q-mt-md myinput">
-                <q-input :input-style="{ fontSize: '18px' }" input-class="input-class text-white" outlined v-model="nickname"
-                  autogrow class="secondary-border">
-                  <template v-slot:append>
-                  </template>
-                </q-input>
-              </div>
-            </div>
-            <div class="row justify-center  q-mt-md">
-              <q-btn size="md" rounded icon="play_circle_outline" label="Start Brain Flick" @click="startBrainFlick"
+          </div>
+          <div class="row justify-center  q-mt-md">
+            <q-btn size="md" rounded icon="play_circle_outline" label="Start Brain Flick" @click="startBrainFlick"
               class="q-py-sm  q-px-lg btn-color" />
-            </div>
           </div>
-          <div class="col-6 text-left">
-            <div class="row ">
-              <Vue3Lottie ref="customControl" animationLink="https://lottie.host/a70624a9-d1a5-45b6-a462-2006689c8ec1/mFkdZdWR1W.json"
-                :height="200" :width="200" :loop="true" :speed="2" :autoPlay="true" :direction="forward"
-                :pauseAnimation="true" :pauseOnHover="true" />
-               
-            </div>
+        </div>
+        <div class="col-6  column items-start">
+          <div class="row ">
+            <Vue3Lottie ref="customControl"
+              animationLink="https://lottie.host/a70624a9-d1a5-45b6-a462-2006689c8ec1/mFkdZdWR1W.json" :height="200"
+              :width="200" :loop="true" :speed="2" :autoPlay="true" :direction="forward" :pauseAnimation="true"
+              :pauseOnHover="true" />
+
           </div>
+        </div>
       </div>
     </div>
   </q-page>
