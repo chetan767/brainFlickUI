@@ -1,39 +1,37 @@
 <template>
-  <q-page>
+  <q-page class="flex flex-center row">
     <div class="col-12 text-h6 text-weight-bold text-center  ">
 
       <div class="row justify-center">
-        <div class="col-10  rounded-borders  main-div q-ma-lg">
+        <div class="col-9    main-div q-ma-lg q-py-lg">
           <div class="row">
             <div class="col">
-              <Vue3Lottie ref="customControl"
-                  animationLink="https://lottie.host/72a24787-0e2d-4e4b-bdb9-c77f1293ea46/z5dvJ0pd7A.json" :height="100"
-                  :width="200" :loop="true" :speed="2" :autoPlay="true" :direction="forward" :pauseAnimation="true"
-                  :pauseOnHover="true" />
+              <q-img class="logo" src="~assets/logo.png">
+              </q-img>
             </div>
           </div>
-          <div class="row">
-            <div class="col-6 text-white column items-end  q-mt-lg q-pr-lg rounded-borders">
+          <div class="row justify-center">
+            <div class="col-6 text-white column  q-mt-lg q-px-lg ">
               <div class="nick-box q-pa-md q-pb-xl">
-              <div class="row justify-center q-mt-xl">
-                CHOOSE A COOL NICKNAME
-              </div>
-              <div class="row justify-center q-pr-lg ">
-                <div class="col-12 q-mt-md myinput">
-                  <q-input :input-style="{ fontSize: '18px' }" input-class="input-class text-white" outlined
-                    v-model="nickname" autogrow class="secondary-border">
-                    <template v-slot:append>
-                    </template>
-                  </q-input>
+                <div class="row justify-center q-mt-xl">
+                  CHOOSE A COOL NICKNAME
+                </div>
+                <div class="row justify-center q-pr-lg ">
+                  <div class="col-12 q-mt-md myinput">
+                    <q-input :input-style="{ fontSize: '18px' }" input-class="input-class text-white" outlined
+                      v-model="nickname" autogrow class="secondary-border">
+                      <template v-slot:append>
+                      </template>
+                    </q-input>
+                  </div>
+                </div>
+                <div class="row justify-center  q-mt-xl q-pr-lg">
+                  <q-btn size="lg" icon="play_circle_outline" label="Start Brain Flick" @click="startBrainFlick"
+                    class="q-py-sm  q-px-lg btn-color text-black" />
                 </div>
               </div>
-              <div class="row justify-center  q-mt-md q-pr-lg">
-                <q-btn size="md" rounded icon="play_circle_outline" label="Start Brain Flick" @click="startBrainFlick"
-                  class="q-py-sm  q-px-lg btn-color" />
-              </div>
-              </div>
             </div>
-            <div class="col-6  column items-start">
+            <div class="col-5  column items-end">
               <div class="row">
                 <Vue3Lottie ref="customControl"
                   animationLink="https://lottie.host/19cf3eb7-214f-40e7-a1d4-eecb64417a1b/PAkLvinYJ9.json" :height="300"
@@ -42,21 +40,20 @@
               </div>
             </div>
           </div>
-          <div class="row q-pa-md">
+          <div class="row q-mt-xl">
             <div class="col">
               brainflick
             </div>
-            <div class="col-auto" >
-             <div class="row items-center">
-              <q-btn color="primary" flat >Privacy</q-btn>
-              <q-btn color="primary" flat >Assets</q-btn>
-              <q-btn color="primary" flat >Blog</q-btn>
-              <q-btn color="primary" flat >Contact</q-btn>
-              <q-btn color="primary" flat >terms of service</q-btn>
-              <q-icon name="mdi-youtube" color="primary" size="1.5em" />
-              <q-icon name="mdi-instagram" color="primary" size="1em" />
-           
-             </div>
+            <div class="col-auto">
+              <div class="row items-center">
+                <q-btn color="primary" class="text-overline text-weight-bold text-white" flat>Privacy</q-btn>
+                <q-btn color="primary" class="text-overline text-weight-bold text-white" flat>Assets</q-btn>
+                <q-btn color="primary" class="text-overline text-weight-bold text-white" flat>Blog</q-btn>
+                <q-btn color="primary" class="text-overline text-weight-bold text-white" flat>Contact</q-btn>
+                <q-btn color="primary" class="text-overline text-weight-bold text-white" flat>terms of service</q-btn>
+
+
+              </div>
             </div>
             <div class="col">
               brainflick
@@ -64,7 +61,7 @@
           </div>
         </div>
 
-        
+
       </div>
     </div>
   </q-page>
@@ -135,6 +132,7 @@ defineOptions({
 
 .btn-color {
   background-color: $secondary;
+  border-radius: 10px;
 }
 </style>
 
@@ -148,14 +146,11 @@ defineOptions({
 }
 
 .main-div {
-  border: 4px solid rgba(11, 11, 11, 0.3);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, .15), 0px 3px 0px 0px rgba(255, 255, 255, .15);
+  border: 4px rgba(29, 29, 27, .15) solid;
 }
+
 .nick-box {
-  background-color: rgba(11, 11, 11, 0.2);
-  padding-left: 10%;
-  border-radius: 15px;
+  /* background-color: rgba(11, 11, 11, 0.2); */
 }
-
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf" class="mybg">
-    <drawer></drawer>
-    <q-page-container>
+    <!-- <drawer></drawer> -->
+    <q-page-container class="mybg1">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -27,8 +27,14 @@ defineOptions({
 
 <style lang="scss">
 .mybg {
-  background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+  background-image: url(./assets/textura.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
 }
+
+.mybg1 {}
 
 .navbar {
   background: #2d2d2d;
@@ -38,6 +44,8 @@ defineOptions({
 
 body {
   color: white;
+  background: -webkit-linear-gradient(250deg, rgb(0 118 237 / 95%) 0%, rgb(49 97 125) 100%);
+
 }
 
 .logo {
@@ -46,7 +54,7 @@ body {
 
 .active {
   background-color: $info;
-  color: white !important;
+  color: black !important;
 
 }
 </style>

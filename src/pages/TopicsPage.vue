@@ -38,39 +38,39 @@
       <div class="col-12" v-for="category, index in topicsStore.categories" :key="index">
         <q-card class=" category-card " flat>
           <q-card-section>
-            <div class="text-h6  text-capitalize   text-white text-bold ">{{ category.name }}</div>
+            <div class="text-h6  text-capitalize  text-bold ">{{ category.name }}</div>
             <div class="row align-center">
               <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="topic, index in category.topics" :key="index"
                 @click="startQuiz(category, topic)">
-                  <q-card class="my-card  q-ma-md ">
-                    <q-card-section>
-                      <div class="row items-center">
-                        <div class="col-auto q-mr-sm">
-                          <q-icon size="sm" name="mdi-movie-check-outline" />
-                        </div>
-                        <div class="text-h6  text-capitalize col">{{ topic.name }}</div>
-                        <div class="col-auto">
-                          <q-icon size="lg" name="chevron_right" />
-
-                        </div>
+                <q-card class="my-card  q-ma-md ">
+                  <q-card-section>
+                    <div class="row items-center">
+                      <div class="col-auto q-mr-sm">
+                        <q-icon size="sm" name="mdi-movie-check-outline" />
+                      </div>
+                      <div class="text-h6  text-capitalize col">{{ topic.name }}</div>
+                      <div class="col-auto">
+                        <q-icon size="lg" name="chevron_right" />
 
                       </div>
 
+                    </div>
 
-                    </q-card-section>
 
-                    <q-separator color="blue-grey-13" class="q-mx-md" />
-                    <q-card-section>
-                      {{ topic.description }}
-                    </q-card-section>
-                    <q-card-actions>
-                      <q-chip v-for="tag, index in topic.tags" color="info" text-color="white" :icon="tag.icon"
-                        :key="index">
-                        {{ tag.name }}
-                      </q-chip>
+                  </q-card-section>
 
-                    </q-card-actions>
-                  </q-card>
+                  <q-separator color="blue-grey-13" class="q-mx-md" />
+                  <q-card-section>
+                    {{ topic.description }}
+                  </q-card-section>
+                  <q-card-actions>
+                    <q-chip v-for="tag, index in topic.tags" color="secondary" text-color="white" :icon="tag.icon"
+                      :key="index">
+                      {{ tag.name }}
+                    </q-chip>
+
+                  </q-card-actions>
+                </q-card>
               </div>
             </div>
           </q-card-section>
@@ -128,9 +128,9 @@ defineOptions({
 
 .my-card {
   border-radius: 20px;
-  background-color: $info;
+  background-color: rgba(255, 255, 255, .6);
+  color: black;
   cursor: pointer;
-  color: white;
 }
 
 .secondary-border {

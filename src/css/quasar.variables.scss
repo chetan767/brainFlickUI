@@ -11,11 +11,11 @@
 // It's highly recommended to change the default colors
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
-@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-$typography-font-family: "Comic Neue", cursive !default;
+// @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+// $typography-font-family: "Comic Neue", cursive !default;
 
 $primary: #1976d2;
-$secondary: rgb(44 96 154);
+$secondary: rgb(245, 247, 250);
 $accent: rgb(255 255 255 / 15%);
 
 $dark: #1d1d1d;
@@ -23,7 +23,7 @@ $dark-page: #121212;
 
 $positive: #21ba45;
 $negative: #c10015;
-$info: #2e3b4e;
+$info: #1976d2;
 $warning: #f2c037;
 
 $myaccent: #1976d2;
