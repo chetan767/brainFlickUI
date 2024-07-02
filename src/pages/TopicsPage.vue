@@ -64,7 +64,7 @@
                     {{ topic.description }}
                   </q-card-section>
                   <q-card-actions>
-                    <q-chip v-for="tag, index in topic.tags" color="secondary" text-color="white" :icon="tag.icon"
+                    <q-chip v-for="tag, index in topic.tags" color="secondary`" text-color="white" :icon="tag.icon"
                       :key="index">
                       {{ tag.name }}
                     </q-chip>
